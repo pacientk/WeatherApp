@@ -6,6 +6,7 @@ navigator.geolocation = require('@react-native-community/geolocation');
 import Weather from './components/Weather';
 import { API_KEY } from './utils/WeatherAPIkey';
 import { mockRes } from './utils/mockRes';
+import BackgroundControl from './components/BackgroundControl';
 
 const App = () => {
     const [weatherState, setWeatherState] = useState({
@@ -63,9 +64,11 @@ const App = () => {
 
     return (
         <View style={s.container}>
-            {!isLoading
-                ? <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#00d2ff' }}><Text>Getting Data...</Text></View>
-                : <Weather weather={weatherCondition} cityName={cityName} temperature={temperature} />}
+            <BackgroundControl>
+                {!isLoading
+                    ? <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#00d2ff' }}><Text>Getting Data...</Text></View>
+                    : <Weather weather={weatherCondition} cityName={cityName} temperature={temperature} />}
+            </BackgroundControl>
         </View>
     );
 };

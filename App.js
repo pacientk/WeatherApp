@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import Geolocation from '@react-native-community/geolocation';
-
+import Geolocation from '@react-native-community/geolocation';
 navigator.geolocation = require('@react-native-community/geolocation');
-import Weather from './components/Weather';
-import { API_KEY } from './utils/WeatherAPIkey';
 import { mockRes } from './utils/mockRes';
-import BackgroundControl from './components/BackgroundControl';
+import {BackgroundControl, Weather} from './components';
+import { API_KEY } from './utils/WeatherAPIkey';
+
 
 const App = () => {
     const [weatherState, setWeatherState] = useState({

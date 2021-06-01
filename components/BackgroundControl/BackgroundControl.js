@@ -17,8 +17,8 @@ const BackgroundControl = ({ children, color }) => {
                 style={s.buttonHolder}>
                 <Image
                     resizeMode={'contain'}
-                    style={{ width: 50, height: 50, borderWidth: 2, borderRadius: 35, borderColor: 'white' }}
-                    source={require('../assets/btn_icon.png')} />
+                    style={{ width: 50, height: 50 }}
+                    source={require('../../assets/btn_icon.png')} />
                 <Text style={{ color: '#fff', textAlign: 'center', fontSize: 12, lineHeight: 14, marginTop: 4 }}>Change color</Text>
             </TouchableOpacity>
         </View>
@@ -30,15 +30,9 @@ const s = StyleSheet.create({
         position: 'absolute',
         bottom: 63,
         right: 20,
-        // width: 70,
-        // height: 70,
-        // borderRadius: 35,
-        // backgroundColor: 'green',
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: 999,
-        // borderWidth: 2,
-        // borderColor: 'white'
     },
 });
 export default BackgroundControl;

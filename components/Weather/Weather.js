@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import Proptypes from 'prop-types';
-import { weatherConditions } from '../utils/WeatherCondition';
+import { weatherConditions } from '../../utils/WeatherCondition';
 
 const Weather = ({ weather, temperature, cityName }) => {
     return (

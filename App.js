@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Geolocation from '@react-native-community/geolocation';
 navigator.geolocation = require('@react-native-community/geolocation');
+import RNRandomBgColor from 'react-native-random-bg-color';
 import { mockRes } from './utils/mockRes';
-import {BackgroundControl, Weather} from './components';
+import { Weather} from './components';
 import { API_KEY } from './utils/WeatherAPIkey';
 
 
@@ -63,11 +63,11 @@ const App = () => {
 
     return (
         <View style={s.container}>
-            <BackgroundControl>
+            <RNRandomBgColor>
                 {!isLoading
                     ? <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#00d2ff' }}><Text>Getting Data...</Text></View>
                     : <Weather weather={weatherCondition} cityName={cityName} temperature={temperature} />}
-            </BackgroundControl>
+            </RNRandomBgColor>
         </View>
     );
 };
